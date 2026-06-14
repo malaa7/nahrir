@@ -1,0 +1,1206 @@
+.mero-calendar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--spacing-md);
+    overflow: auto;
+}
+
+.mero-calendar-container .feature-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Main Layout */
+.mero-calendar-layout {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.mero-calendar-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    max-width: 50%;
+}
+
+.mero-todo-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Calendar Header */
+.mero-calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+}
+
+.mero-month-picker {
+    position: relative;
+}
+
+.mero-header-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    background: var(--bg-hover);
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.mero-header-btn:hover {
+    background: var(--bg-active);
+    border-color: var(--border-color);
+}
+
+.mero-header-btn.active {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.mero-header-btn.hijri {
+    font-family: 'Amiri', serif;
+    font-size: 0.9rem;
+    background: rgba(var(--accent-primary-rgb), 0.05);
+    color: var(--text-secondary);
+}
+
+.mero-header-btn.hijri:hover {
+    background: rgba(var(--accent-primary-rgb), 0.1);
+    color: var(--text-primary);
+}
+
+.mero-header-btn.hijri.active {
+    background: var(--accent-primary);
+    color: white;
+}
+
+/* Month Picker Dropdown */
+/* Month Picker Dropdown */
+/* Month Picker Dropdown */
+/* Month Picker Dropdown */
+.mero-month-dropdown {
+    position: absolute;
+    top: 100%;
+    inset-inline-start: 0;
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    /* High z-index to sit above overlay */
+    min-width: 280px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    max-height: 60vh;
+    overflow-y: auto;
+    /* Stabilize scrollbar */
+    padding-right: 4px;
+
+    /* Hardware acceleration */
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Custom Scrollbar */
+.mero-month-dropdown::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.mero-month-dropdown::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.mero-month-dropdown::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 3px;
+    opacity: 0.5;
+}
+
+.mero-month-dropdown::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+.mero-year-selector {
+    margin-bottom: var(--spacing-md);
+}
+
+.mero-year-selector label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.mero-year-selector select {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    cursor: pointer;
+    appearance: none;
+    /* Custom arrow for standardized look */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a0aec0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    /* Default LTR */
+    background-size: 16px;
+    /* Start padding for text */
+    padding-inline-start: 12px;
+    padding-inline-end: 32px;
+}
+
+/* RTL support for select arrow */
+[dir="rtl"] .mero-year-selector select {
+    background-position: left 10px center;
+}
+
+.mero-year-selector select option {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 8px;
+}
+
+.mero-year-selector select option:checked,
+.mero-year-selector select option:hover {
+    background: #6366f1;
+    color: white;
+}
+
+.mero-months-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.mero-month-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.mero-month-item:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.mero-month-item.active {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.mero-close-dropdown {
+    width: 100%;
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    border: none;
+    background: var(--bg-hover);
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.mero-close-dropdown:hover {
+    background: var(--bg-active);
+}
+
+/* Navigation Controls */
+.mero-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.mero-today-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    border: none;
+    background: var(--bg-hover);
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.mero-today-btn:hover {
+    background: var(--bg-active);
+}
+
+.mero-nav-btn {
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.mero-nav-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.mero-nav-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Day Names */
+.mero-day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.mero-day-name {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: var(--spacing-xs);
+}
+
+/* Calendar Grid */
+.mero-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.mero-calendar-day {
+    position: relative;
+    padding: 8px 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    min-height: 45px;
+    transition: all 0.2s ease;
+    background: var(--bg-card);
+    text-align: center;
+}
+
+.mero-calendar-day:hover {
+    transform: scale(1.02);
+    background: var(--bg-hover);
+}
+
+.mero-calendar-day.other-month {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.mero-calendar-day.selected {
+    background: rgba(var(--accent-primary-rgb), 0.2);
+    box-shadow: inset 0 0 0 2px var(--accent-primary);
+}
+
+.mero-calendar-day.today:not(.selected) {
+    background: rgba(var(--accent-primary-rgb), 0.1);
+}
+
+/* Calendar Day Content Layout */
+
+/* Calendar Day Content Layout */
+.day-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 4px;
+    gap: 4px;
+}
+
+.mero-day-number {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.mero-day-number.is-today {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Header Badge */
+.mero-hijri-badge {
+    background: rgba(var(--accent-primary-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-primary-rgb), 0.2);
+    color: var(--text-primary);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-family: 'Amiri', serif;
+    font-weight: 500;
+}
+
+/* Cell Box - The "Independent Box" */
+.mero-hijri-day-box {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    font-family: 'Amiri', serif;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    min-width: 24px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Legacy - kept for safety */
+.mero-hijri-number {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-family: 'Amiri', serif;
+    opacity: 0.8;
+}
+
+/* Event Indicators */
+.mero-day-events {
+    margin-top: var(--spacing-xs);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mero-event-item {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mero-event-item:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+.mero-more-events {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+/* Add Event Button */
+.mero-add-event-section {
+    margin-top: var(--spacing-md);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mero-add-event-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.mero-add-event-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.mero-add-event-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Click outside overlay */
+/* Click outside overlay */
+.mero-dropdown-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 49;
+    background: transparent;
+    cursor: default;
+}
+
+/* ================= TODO LIST ================= */
+
+.mero-todo-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.mero-todo-header {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mero-todo-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+}
+
+.mero-todo-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.mero-add-task-btn {
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.mero-add-task-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+.mero-add-task-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Stats */
+.mero-todo-stats {
+    display: flex;
+    gap: var(--spacing-md);
+    font-size: 0.875rem;
+}
+
+.mero-stat-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--text-secondary);
+}
+
+.mero-stat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.mero-stat-dot.total {
+    background: var(--accent-primary);
+}
+
+.mero-stat-dot.pending {
+    background: #f59e0b;
+}
+
+.mero-stat-dot.done {
+    background: #22c55e;
+}
+
+/* Filter Tabs */
+.mero-filter-tabs {
+    display: flex;
+    margin-top: var(--spacing-md);
+    padding: 4px;
+    border-radius: var(--radius-md);
+    background: var(--bg-hover);
+}
+
+.mero-filter-tab {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+    transition: all 0.2s ease;
+}
+
+.mero-filter-tab:hover {
+    color: var(--text-primary);
+}
+
+.mero-filter-tab.active {
+    background: var(--accent-primary);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+/* Task List */
+.mero-task-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.mero-empty-tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.mero-empty-tasks svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+.mero-empty-tasks p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.mero-empty-tasks span {
+    font-size: 0.875rem;
+    margin-top: var(--spacing-xs);
+}
+
+/* Task Item */
+.mero-task-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid #f59e0b;
+}
+
+.mero-task-item:hover {
+    transform: translateX(4px);
+    background: var(--bg-hover);
+}
+
+.mero-task-item.priority-high {
+    border-left-color: #ef4444;
+}
+
+.mero-task-item.priority-medium {
+    border-left-color: #f59e0b;
+}
+
+.mero-task-item.priority-low {
+    border-left-color: #22c55e;
+}
+
+.mero-task-item.completed {
+    opacity: 0.6;
+}
+
+.mero-task-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.mero-task-checkbox:checked {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.mero-task-checkbox:checked::after {
+    content: '?';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+}
+
+.mero-task-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.mero-task-title {
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.mero-task-item.completed .mero-task-title {
+    text-decoration: line-through;
+}
+
+.mero-task-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mero-task-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+    font-size: 0.75rem;
+}
+
+.mero-task-date {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--text-secondary);
+}
+
+.mero-task-date svg {
+    width: 14px;
+    height: 14px;
+}
+
+.mero-task-priority {
+    text-transform: capitalize;
+}
+
+.mero-task-priority.high {
+    color: #ef4444;
+}
+
+.mero-task-priority.medium {
+    color: #f59e0b;
+}
+
+.mero-task-priority.low {
+    color: #22c55e;
+}
+
+.mero-task-delete {
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-muted);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.mero-task-item:hover .mero-task-delete {
+    opacity: 1;
+}
+
+.mero-task-delete:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.mero-task-delete svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ================= MODALS ================= */
+
+.mero-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    }
+
+    to {
+    opacity: 1;
+    }
+}
+
+.mero-modal {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+.mero-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mero-modal-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.mero-modal-close {
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-md);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.mero-modal-close:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.mero-modal-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.mero-modal-form {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.mero-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.mero-form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.mero-form-input {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.mero-form-input option {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 8px;
+}
+
+.mero-form-input option:hover,
+.mero-form-input option:checked {
+    background: #6366f1;
+    color: white;
+}
+
+.mero-form-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.1);
+}
+
+.mero-form-input::placeholder {
+    color: var(--text-muted);
+}
+
+.mero-form-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+}
+
+.mero-form-row-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+/* Color Picker */
+.mero-color-options {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.mero-color-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mero-color-btn:hover {
+    transform: scale(1.1);
+}
+
+.mero-color-btn.selected {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px white, 0 0 0 4px currentColor;
+}
+
+/* Priority Buttons */
+.mero-priority-options {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.mero-priority-btn {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: none;
+    font-weight: 500;
+    text-transform: capitalize;
+    cursor: pointer;
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.mero-priority-btn:hover {
+    background: var(--bg-active);
+}
+
+.mero-priority-btn.selected.low {
+    background: #22c55e;
+    color: white;
+}
+
+.mero-priority-btn.selected.medium {
+    background: #f59e0b;
+    color: white;
+}
+
+.mero-priority-btn.selected.high {
+    background: #ef4444;
+    color: white;
+}
+
+/* Reminder Section */
+.mero-reminder-section {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    background: var(--bg-hover);
+}
+
+.mero-reminder-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+}
+
+.mero-reminder-header label {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Toggle Switch */
+.mero-toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background: var(--bg-active);
+    transition: all 0.2s ease;
+}
+
+.mero-toggle.active {
+    background: var(--accent-primary);
+}
+
+.mero-toggle-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.mero-toggle.active .mero-toggle-knob {
+    left: 22px;
+}
+
+/* Modal Actions */
+.mero-modal-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--spacing-md);
+}
+
+.mero-delete-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: none;
+    background: transparent;
+    color: #ef4444;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mero-delete-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.mero-action-btns {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.mero-cancel-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mero-cancel-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.mero-submit-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: none;
+    background: var(--gradient-primary);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.mero-submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Recurrence Note */
+.mero-recurrence-note {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+/* ================= ALARM OVERLAY ================= */
+
+.mero-alarm-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mero-alarm-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.mero-alarm-card {
+    position: relative;
+    padding: var(--spacing-xl);
+    max-width: 400px;
+    width: 100%;
+    margin: var(--spacing-md);
+    text-align: center;
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.5);
+    animation: alarmPulse 1s infinite;
+}
+
+@keyframes alarmPulse {
+
+    0%,
+    100% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    }
+
+    50% {
+    box-shadow: 0 0 60px rgba(239, 68, 68, 0.8);
+    }
+}
+
+.mero-alarm-icon {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto var(--spacing-lg);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: iconPulse 1s infinite;
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+    transform: scale(1);
+    }
+
+    50% {
+    transform: scale(1.1);
+    }
+}
+
+.mero-alarm-icon svg {
+    width: 56px;
+    height: 56px;
+    color: white;
+}
+
+.mero-alarm-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--spacing-sm);
+}
+
+.mero-alarm-event-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-sm);
+}
+
+.mero-alarm-body {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--spacing-xl);
+}
+
+.mero-alarm-dismiss-btn {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: white;
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-lg);
+}
+
+.mero-alarm-dismiss-btn:hover {
+    transform: scale(1.05);
+    background: #f8f8f8;
+}
+
+.mero-alarm-sound-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+}
+
+.mero-alarm-sound-indicator svg {
+    width: 16px;
+    height: 16px;
+    animation: iconPulse 1s infinite;
+}

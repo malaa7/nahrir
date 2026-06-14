@@ -1,0 +1,146 @@
+.notes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.notes-toolbar {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--bg-tertiary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.search-input:focus {
+    box-shadow: none;
+}
+
+.note-editor {
+    margin-bottom: var(--spacing-xl);
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.editor-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.note-title-input {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.note-content-input {
+    margin-bottom: var(--spacing-md);
+    resize: vertical;
+    min-height: 120px;
+}
+
+.editor-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.note-card {
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.note-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex: 1;
+    margin-inline-end: var(--spacing-md);
+}
+
+.note-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.note-card:hover .note-actions {
+    opacity: 1;
+}
+
+.btn-icon-sm {
+    width: 32px;
+    height: 32px;
+}
+
+.note-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    flex: 1;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.note-meta {
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: var(--spacing-2xl);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .notes-toolbar {
+    flex-direction: column;
+    }
+
+    .search-box {
+    width: 100%;
+    }
+
+    .notes-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .note-actions {
+    opacity: 1;
+    }
+}

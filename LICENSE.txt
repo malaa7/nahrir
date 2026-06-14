@@ -1,0 +1,44 @@
+MIT License with Attribution
+
+Copyright (c) 2026 محمد علاء (Mohamed Alaa)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+2. Any modification, distribution, or derivative work must retain the original
+   author name "محمد علاء (Mohamed Alaa)" and the original project name
+   "نَحْرِير (Nahrir)" in a visible location (e.g., about page, README,
+   application footer, or source file headers).
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+رخصة MIT مع الإسناد
+
+حقوق النشر © 2026 محمد علاء
+
+يُمنح الإذن مجانًا لأي شخص يحصل على نسخة من هذا البرنامج والملفات المرتبطة به
+(يشار إليها بـ "البرنامج")، للتعامل مع البرنامج دون قيود، بما في ذلك دون
+قيود حقوق الاستخدام والنسخ والتعديل والدمج والنشر والتوزيع والترخيص الفرعي
+و/أو بيع نسخ من البرنامج، وذلك مع مراعاة الشروط التالية:
+
+1. يجب تضمين إشعار حقوق النشر أعلاه وإذن الترخيص هذا في جميع النسخ أو
+   الأجزاء الجوهرية من البرنامج.
+
+2. يجب أن يحتفظ أي تعديل أو توزيع أو عمل مشتق باسم المؤلف الأصلي
+   "محمد علاء (Mohamed Alaa)" واسم المشروع الأصلي "نَحْرِير (Nahrir)"
+   في مكان ظاهر (مثل صفحة "حول"، ملف README، تذييل التطبيق، أو ترويسة الملفات المصدرية).

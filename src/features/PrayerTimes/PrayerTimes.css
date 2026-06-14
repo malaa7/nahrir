@@ -1,0 +1,97 @@
+.prayer-times-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.location-card {
+    margin-bottom: var(--spacing-xl);
+}
+
+.location-row {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.location-row select {
+    flex: 1;
+}
+
+.next-prayer-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+}
+
+.next-prayer-label {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-sm);
+}
+
+.next-prayer-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.next-prayer-time {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    margin-bottom: var(--spacing-md);
+}
+
+.time-remaining {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.prayers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.prayer-card {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.prayer-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.prayer-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.prayer-time {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 768px) {
+    .location-row {
+    flex-direction: column;
+    }
+
+    .prayers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .next-prayer-time {
+    font-size: 2rem;
+    }
+}

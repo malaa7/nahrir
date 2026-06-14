@@ -1,0 +1,122 @@
+.world-clock {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.add-city-card {
+    margin-bottom: var(--spacing-xl);
+}
+
+.add-city-row {
+    width: 100%;
+}
+
+.search-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    width: 100%;
+    align-items: stretch;
+}
+
+.search-input {
+    flex: 2;
+}
+
+.city-select {
+    flex: 3;
+}
+
+.add-btn {
+    flex: 1;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.clocks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.clock-card {
+    position: relative;
+    padding: var(--spacing-xl);
+    text-align: center;
+    cursor: default;
+}
+
+.remove-btn {
+    position: absolute;
+    top: var(--spacing-sm);
+    inset-inline-end: var(--spacing-sm);
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    background: var(--bg-tertiary);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    opacity: 0;
+}
+
+.clock-card:hover .remove-btn {
+    opacity: 1;
+}
+
+.remove-btn:hover {
+    background: var(--error);
+    color: white;
+}
+
+.clock-city {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.clock-time {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Courier New', monospace;
+    margin-bottom: var(--spacing-sm);
+}
+
+.clock-timezone {
+    margin-top: var(--spacing-sm);
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: var(--spacing-2xl);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .add-city-row {
+    flex-direction: column;
+    }
+
+    .clocks-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .clock-time {
+    font-size: 2rem;
+    }
+}

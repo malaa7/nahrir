@@ -1,0 +1,20 @@
+/* PDF Controls */
+.pdf-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.pdf-controls .page-indicator {
+    min-width: 60px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.pdf-controls .action-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}

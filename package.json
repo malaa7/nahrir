@@ -1,0 +1,47 @@
+{
+  "name": "nahrir",
+  "version": "2.0.0",
+  "description": "نَحْرِير - مساعد شخصي ذكي للمعلمين وصُنّاع المحتوى (Web App)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "personal-assistant",
+    "productivity",
+    "teacher-tools",
+    "arabic",
+    "quran",
+    "pwa"
+  ],
+  "author": "محمد علاء (Mohamed Alaa)",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.1",
+    "@vitejs/plugin-react": "^6.0.2",
+    "tailwindcss": "^4.3.1",
+    "vite": "^8.0.16",
+    "vite-plugin-pwa": "^1.0.0"
+  },
+  "dependencies": {
+    "@panzoom/panzoom": "^4.6.1",
+    "axios": "^1.17.0",
+    "date-fns": "^4.4.0",
+    "date-fns-tz": "^3.2.0",
+    "framer-motion": "^12.9.0",
+    "konva": "^10.3.0",
+    "lucide-react": "^1.18.0",
+    "pdfjs-dist": "^5.4.530",
+    "perfect-freehand": "^1.2.3",
+    "plyr": "^3.8.4",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-konva": "^19.2.5",
+    "react-router-dom": "^7.17.0",
+    "uuid": "^14.0.0",
+    "xlsx": "^0.18.5",
+    "zustand": "^5.0.14"
+  }
+}
