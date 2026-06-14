@@ -62,7 +62,24 @@ const Settings = () => {
     showMessage(`${t('error')}: ${result.error}`, 'error');
     }
     } else {
-    showMessage(`⚠️ ${t('backupElectronOnly')}`, 'warning');
+    try {
+    const backupData = {};
+    for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    backupData[key] = localStorage.getItem(key);
+    }
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupData, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", `nahrir_backup_${new Date().toISOString().slice(0, 10)}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+    showMessage(`${t('success')}! ${t('backupSaved')}`, 'success');
+    } catch (error) {
+    console.error('Failed to create backup:', error);
+    showMessage(`${t('error')}`, 'error');
+    }
     }
     };
 
@@ -78,7 +95,32 @@ const Settings = () => {
     }
     }
     } else {
-    showMessage(`⚠️ ${t('restoreElectronOnly')}`, 'warning');
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = '.json';
+    fileInput.onchange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+    try {
+      const data = JSON.parse(event.target.result);
+      if (confirm(t('confirmRestore'))) {
+        localStorage.clear();
+        Object.keys(data).forEach(key => {
+          localStorage.setItem(key, data[key]);
+        });
+        showMessage(`${t('success')}! ${t('dataRestored')}`, 'success');
+        setTimeout(() => window.location.reload(), 1500);
+      }
+    } catch (error) {
+      console.error('Failed to restore backup:', error);
+      showMessage(language === 'ar' ? 'ملف نسخة احتياطية غير صالح' : 'Invalid backup file', 'error');
+    }
+    };
+    reader.readAsText(file);
+    };
+    fileInput.click();
     }
     };
 
