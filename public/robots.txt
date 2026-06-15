@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nahrir.pages.dev/sitemap.xml
+Sitemap: https://nahrir.vercel.app/sitemap.xml
