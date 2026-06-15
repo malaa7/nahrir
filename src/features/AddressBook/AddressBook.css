@@ -387,3 +387,60 @@
     margin-bottom: 1rem;
     opacity: 0.5;
 }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .address-book-container {
+    flex-direction: column;
+    height: auto;
+    }
+
+    .ab-sidebar {
+    width: 100%;
+    padding: 0.75rem;
+    border-left: none;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+    }
+
+    .ab-main {
+    overflow: visible;
+    }
+
+    .ab-header {
+    padding: 1rem;
+    }
+
+    .ab-header-top {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+    }
+
+    .ab-actions {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    }
+
+    .ab-btn span {
+    display: none;
+    }
+
+    .ab-table-container {
+    overflow-x: auto;
+    }
+
+    .ab-table {
+    min-width: 600px;
+    }
+
+    .ab-table th,
+    .ab-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+    }
+
+    .ab-content {
+    padding: 0.5rem;
+    }
+}

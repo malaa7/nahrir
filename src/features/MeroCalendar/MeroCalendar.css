@@ -1204,3 +1204,63 @@
     height: 16px;
     animation: iconPulse 1s infinite;
 }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .mero-calendar-container {
+    padding: var(--spacing-sm);
+    }
+
+    .mero-calendar-layout {
+    flex-direction: column;
+    }
+
+    .mero-calendar-main {
+    max-width: 100%;
+    }
+
+    .mero-calendar-header .flex.flex-col.gap-2.w-full {
+    gap: var(--spacing-sm);
+    }
+
+    .mero-calendar-header .flex.items-center.justify-between.w-full {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    }
+
+    .mero-month-dropdown {
+    min-width: 240px;
+    inset-inline-start: 0;
+    right: auto;
+    }
+
+    .mero-calendar-day {
+    padding: 4px 2px;
+    min-height: 36px;
+    }
+
+    .mero-day-number {
+    font-size: 0.85rem;
+    }
+
+    .mero-day-number.is-today {
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+    }
+
+    .mero-hijri-day-box {
+    font-size: 0.55rem;
+    padding: 1px 4px;
+    min-width: 20px;
+    }
+
+    .mero-event-item {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+    }
+
+    .mero-todo-container {
+    max-height: 400px;
+    }
+}

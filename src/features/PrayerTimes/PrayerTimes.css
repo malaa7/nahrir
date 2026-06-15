@@ -83,12 +83,21 @@
 }
 
 @media (max-width: 768px) {
+    .prayer-times-container {
+    padding-bottom: var(--spacing-2xl);
+    }
+
     .location-row {
     flex-direction: column;
     }
 
     .prayers-grid {
     grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prayer-card:last-child,
+    .prayer-card:nth-last-child(2) {
+    margin-bottom: 0;
     }
 
     .next-prayer-time {

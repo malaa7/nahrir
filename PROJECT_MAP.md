@@ -96,3 +96,9 @@ src/
 
 ## ORPHANS & PENDING — EMPTY
 All orphaned files have been removed. The project is clean and deployable.
+
+## MOBILE RESPONSIVE FIXES (2026-06-15)
+- [x] **PrayerTimes:** Added `padding-bottom` to container on mobile for Maghrib/Isha spacing
+- [x] **Whiteboard:** Added `touch-action: none` and `overflow: hidden` to canvas-wrapper on mobile to prevent scroll-while-drawing
+- [x] **MeroCalendar:** Added responsive layout (flex-column, full-width main, smaller day cells, scrollable month picker)
+- [x] **AddressBook:** Added responsive layout (flex-column sidebar, scrollable table, hidden button labels)

@@ -254,6 +254,20 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .whiteboard-container {
+    max-width: 100%;
+    }
+
+    .canvas-wrapper {
+    height: 60vh;
+    overflow: hidden;
+    touch-action: none;
+    }
+
+    #stage-container {
+    touch-action: none;
+    }
+
     .top-toolbar-new {
     padding: 8px 12px;
     }
