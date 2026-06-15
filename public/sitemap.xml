@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://nahrir.pages.dev/</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://nahrir.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/dashboard</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/quran</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/prayer</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/whiteboard</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/calendar</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/world-clock</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/timer</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/focus</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/currency</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/notes</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/address-book</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/quick-links</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/important-sites</loc>
+  </url>
+
+  <url>
+    <loc>https://nahrir.vercel.app/settings</loc>
+  </url>
+
 </urlset>
